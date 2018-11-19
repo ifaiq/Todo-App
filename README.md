@@ -1,2 +1,2 @@
 # Todo-App
-A to-do REST API complete with user accounts and authentication
+A Todo App REST API complete with user accounts and authentication
