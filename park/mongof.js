@@ -29,5 +29,4 @@ Mongo.connect(url, { useNewUrlParser: true },(err, client)=>{
         }
     });
 
-
 });
