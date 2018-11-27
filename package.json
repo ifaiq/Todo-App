@@ -5,13 +5,18 @@
   "main": "index.js",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "expect": "^1.20.2",
     "express": "^4.16.4",
+    "mocha": "^5.2.0",
     "mongodb": "^3.1.9",
-    "mongoose": "^5.3.12"
+    "mongoose": "^5.3.12",
+    "supertest": "^3.3.0"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha server/**/*.test.js",
+    "test-watch":"nodemon \"npm test\""
+
   },
   "author": "Faiq",
   "license": "ISC"

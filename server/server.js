@@ -23,13 +23,23 @@ app.post('/todos',(req,res)=>{
         res.send(result);
     },
     (err)=>{
-        res.send(err)
+        res.status(400).send(err)
     });
+});
 
-
-
+app.get('/todos',(req,res)=>{
+    
+    todo.find().then((result)=>{
+        res.send({result});
+    },
+    (err)=>{
+        res.status(400).send(err)
+    });
 });
 
 app.listen(3000,()=>{
     console.log('3000');
 });
+
+
+module.exports = {app};
