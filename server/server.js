@@ -2,7 +2,7 @@ const express = require('express');
 const bodyparser = require('body-parser');
 const{ObjectID}= require('mongodb');
 const mongoose = require('mongoose');
-const url = process.env.MONGODB_URI ||'mongodb://localhost:27017/todo'
+const url = process.env.MONGOLAB_URI ||'mongodb://localhost:27017/todo'
 mongoose.Promise = global.Promise;
 mongoose.connect(url);
 
@@ -63,6 +63,8 @@ var id = req.params.id;
 
 app.listen(port,()=>{
     console.log(port);
+    console.log();
+    console.log(url);
 });
 
 
