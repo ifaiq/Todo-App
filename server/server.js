@@ -16,7 +16,7 @@ var port = process.env.PORT || 3000;
 app.use(bodyparser.json());
 
 
-app.post('/todos',(req,res)=>{
+app.post('/todo',(req,res)=>{
 
     var todo1 = new todo({
         text: req.body.text
@@ -30,7 +30,7 @@ app.post('/todos',(req,res)=>{
     });
 });
 
-app.get('/todos',(req,res)=>{
+app.get('/todo',(req,res)=>{
     
     todo.find().then((todos)=>{
         res.send({todos});
@@ -40,7 +40,7 @@ app.get('/todos',(req,res)=>{
     });
 });
 
-app.get('/todos/:id',(req,res)=>{
+app.get('/todo/:id',(req,res)=>{
 var id = req.params.id;
  if(!ObjectID.isValid(id)){
      return res.status(404).send();
