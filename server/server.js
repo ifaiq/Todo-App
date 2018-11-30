@@ -2,7 +2,7 @@ const express = require('express');
 const bodyparser = require('body-parser');
 const{ObjectID}= require('mongodb');
 const mongoose = require('mongoose');
-const url = process.env.MONGOLAB_URI ||'mongodb://localhost:27017/todo'
+const url ='mongodb://admin:admin123@ds143070.mlab.com:43070/todos'||'mongodb://localhost:27017/todo'
 mongoose.Promise = global.Promise;
 mongoose.connect(url);
 
@@ -16,7 +16,7 @@ var port = process.env.PORT || 3000;
 app.use(bodyparser.json());
 
 
-app.post('/todo',(req,res)=>{
+app.post('/todos',(req,res)=>{
 
     var todo1 = new todo({
         text: req.body.text
@@ -30,7 +30,7 @@ app.post('/todo',(req,res)=>{
     });
 });
 
-app.get('/todo',(req,res)=>{
+app.get('/todos',(req,res)=>{
     
     todo.find().then((todos)=>{
         res.send({todos});
@@ -40,7 +40,7 @@ app.get('/todo',(req,res)=>{
     });
 });
 
-app.get('/todo/:id',(req,res)=>{
+app.get('/todos/:id',(req,res)=>{
 var id = req.params.id;
  if(!ObjectID.isValid(id)){
      return res.status(404).send();
