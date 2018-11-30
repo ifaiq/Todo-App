@@ -14,9 +14,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "mocha server/**/*.test.js",
-    "test-watch":"nodemon \"npm test\""
-
+    "start": "node server/server.js",
+    "test": "mocha server/**/*.test.js"
   },
   "author": "Faiq",
   "license": "ISC"
